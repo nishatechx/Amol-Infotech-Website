@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, ArrowRight, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
+import { useCms } from "../hooks/useCms";
+import { DEFAULT_CONTACT } from "../server/defaultData";
 
 interface ContactProps {
   initialCourse?: string;
@@ -7,6 +9,8 @@ interface ContactProps {
 }
 
 export const Contact: React.FC<ContactProps> = ({ initialCourse = "", selectedCourse = "" }) => {
+  const { content } = useCms();
+  const contactInfo = content?.contact || DEFAULT_CONTACT;
   const effectiveCourse = selectedCourse || initialCourse || "";
 
   const [formData, setFormData] = useState({
@@ -115,7 +119,7 @@ export const Contact: React.FC<ContactProps> = ({ initialCourse = "", selectedCo
                 GET IN TOUCH
               </div>
               <h2 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
-                Contact <span className="bg-gradient-to-r from-[#38bdf8] via-[#60a5fa] to-[#93c5fd] bg-clip-text text-transparent">Us</span>
+                Get in <span className="bg-gradient-to-r from-[#38bdf8] via-[#60a5fa] to-[#93c5fd] bg-clip-text text-transparent">Touch</span>
               </h2>
               <p className="mt-2 text-sm sm:text-base text-slate-300 font-normal mb-8">
                 Visit our campus or get in touch for admissions and inquiry.
@@ -132,10 +136,10 @@ export const Contact: React.FC<ContactProps> = ({ initialCourse = "", selectedCo
                       Call / WhatsApp
                     </div>
                     <a
-                      href="tel:+919421701759"
+                      href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
                       className="text-base font-bold text-white hover:text-blue-300 transition-colors duration-200"
                     >
-                      +91 94217 01759
+                      {contactInfo.phone}
                     </a>
                   </div>
                 </div>
@@ -150,10 +154,10 @@ export const Contact: React.FC<ContactProps> = ({ initialCourse = "", selectedCo
                       Email Address
                     </div>
                     <a
-                      href="mailto:22210007@mkcl.org"
+                      href={`mailto:${contactInfo.email}`}
                       className="text-base font-medium text-slate-200 hover:text-white transition-colors duration-200"
                     >
-                      22210007@mkcl.org
+                      {contactInfo.email}
                     </a>
                   </div>
                 </div>
@@ -167,10 +171,8 @@ export const Contact: React.FC<ContactProps> = ({ initialCourse = "", selectedCo
                     <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-0.5">
                       Campus Location
                     </div>
-                    <p className="text-[14px] font-medium text-slate-200 leading-relaxed">
-                      Ai Labs, Infont Off Shivaji High School, <br />
-                      Civil Line Rd, Risod, <br />
-                      Maharashtra 444506
+                    <p className="text-[14px] font-medium text-slate-200 leading-relaxed whitespace-pre-line">
+                      {contactInfo.address}
                     </p>
                   </div>
                 </div>

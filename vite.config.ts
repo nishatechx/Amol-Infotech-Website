@@ -82,6 +82,36 @@ function enquiryApiPlugin(): Plugin {
   };
 }
 
+function cmsApiPlugin(): Plugin {
+  return {
+    name: 'cms-api',
+    configureServer(server) {
+      server.middlewares.use(async (req, res, next) => {
+        if (
+          req.url &&
+          (req.url.startsWith('/api/cms') ||
+            req.url.startsWith('/api/auth') ||
+            req.url.startsWith('/api/public') ||
+            req.url.startsWith('/api/cloudinary-signature'))
+        ) {
+          try {
+            const { handleCmsRequest } = await import('./src/server/cmsHandler');
+            const handled = await handleCmsRequest(req, res);
+            if (handled) return;
+          } catch (err: any) {
+            console.error('CMS handler error:', err);
+            res.statusCode = 500;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify({ success: false, error: 'Internal CMS server error' }));
+            return;
+          }
+        }
+        next();
+      });
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   const googleMapsKey = env.VITE_GOOGLE_MAPS_API_KEY || process.env.VITE_GOOGLE_MAPS_API_KEY || '';
@@ -92,6 +122,7 @@ export default defineConfig(({ mode }) => {
       tailwindcss(),
       googleReviewsPlugin(googleMapsKey),
       enquiryApiPlugin(),
+      cmsApiPlugin(),
     ],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),

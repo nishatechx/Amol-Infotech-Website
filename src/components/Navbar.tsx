@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Phone, ChevronDown, ArrowRight, Menu, X } from "lucide-react";
+import { Phone, ChevronDown, ArrowRight, Menu, X, LogIn } from "lucide-react";
 import { motion } from "motion/react";
 import AmolLogo from "./AmolLogo";
 
@@ -150,8 +150,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onApplyClick }) => {
             })}
           </nav>
 
-          {/* Right Action: Apply Button & Phone Contact */}
-          <div className="hidden sm:flex items-center space-x-6 animate-fade-in-down delay-150">
+          {/* Right Action: Apply Button, Phone Contact & Sign In */}
+          <div className="hidden sm:flex items-center space-x-4 lg:space-x-5 animate-fade-in-down delay-150">
             <button
               onClick={onApplyClick || (() => {
                 const el = document.getElementById("contact");
@@ -170,7 +170,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onApplyClick }) => {
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 flex items-center justify-center text-slate-800 group-hover:from-blue-50 group-hover:to-indigo-50 group-hover:text-blue-600 group-hover:border-blue-200 group-hover:scale-105 transition-all duration-200 shadow-2xs">
                 <Phone className="w-4 h-4 transition-transform duration-200 group-hover:rotate-12" />
               </div>
-              <div className="text-left leading-tight">
+              <div className="text-left leading-tight hidden xl:block">
                 <span className="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">
                   Call Now
                 </span>
@@ -179,10 +179,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onApplyClick }) => {
                 </span>
               </div>
             </a>
+
+            {/* Sign In Icon Button: positioned last, same format as Apply Now */}
+            <a
+              href="/director-login"
+              className="group inline-flex items-center justify-center px-3.5 py-2.5 rounded-lg bg-gradient-to-r from-[#e52e2e] via-[#d92525] to-[#b91c1c] hover:from-[#d92525] hover:to-[#991b1b] text-white shadow-md hover:shadow-lg hover:shadow-red-500/25 cursor-pointer transform hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
+              title="Sign In"
+              aria-label="Sign In"
+            >
+              <LogIn className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" />
+            </a>
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center space-x-3">
+          <div className="lg:hidden flex items-center space-x-2">
             <button
               onClick={onApplyClick || (() => {
                 const el = document.getElementById("contact");
@@ -192,6 +202,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onApplyClick }) => {
             >
               Apply
             </button>
+
+            {/* Mobile Sign In Icon Button (same format as Apply) */}
+            <a
+              href="/director-login"
+              className="p-1.5 rounded-md bg-gradient-to-r from-[#e52e2e] to-[#b91c1c] text-white shadow-xs active:scale-95 transition-transform flex items-center justify-center"
+              title="Sign In"
+              aria-label="Sign In"
+            >
+              <LogIn className="w-3.5 h-3.5" />
+            </a>
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-md text-slate-700 hover:text-blue-600 hover:bg-slate-100 active:scale-95 transition-all"
@@ -207,7 +228,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onApplyClick }) => {
       {/* Mobile Menu with slide down */}
       <div
         className={`lg:hidden bg-white/98 backdrop-blur-md border-b border-slate-200 px-4 transition-all duration-300 overflow-hidden ${
-          mobileMenuOpen ? "max-h-96 py-4 opacity-100" : "max-h-0 py-0 opacity-0 pointer-events-none"
+          mobileMenuOpen ? "max-h-[480px] py-4 opacity-100" : "max-h-0 py-0 opacity-0 pointer-events-none"
         }`}
       >
         <div className="space-y-1">
@@ -223,6 +244,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onApplyClick }) => {
               {item.name}
             </a>
           ))}
+
+          {/* Sign In in Mobile Drawer */}
+          <div className="pt-2 border-t border-slate-100 mt-2">
+            <a
+              href="/director-login"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center space-x-2 px-3 py-2.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-[#e52e2e] to-[#b91c1c] shadow-xs"
+            >
+              <LogIn className="w-4 h-4" />
+              <span>Sign In</span>
+            </a>
+          </div>
         </div>
         <div className="pt-3.5 mt-2 border-t border-slate-100 flex items-center justify-between">
           <a

@@ -1,78 +1,103 @@
 import React from "react";
-import { Target, Compass, Award } from "lucide-react";
+import { GraduationCap, Laptop, Award } from "lucide-react";
+import { CLOUDINARY_BRANDING } from "../config/images";
 
 export const About: React.FC = () => {
-  const cards = [
+  const directorPhotoUrl = CLOUDINARY_BRANDING.directorPhoto;
+
+  const keyPoints = [
     {
-      title: "Our Mission",
-      description: "To empower students with practical digital skills and industry certification.",
-      icon: Target,
-      gradient: "from-blue-500 to-indigo-600 shadow-blue-500/25",
+      title: "Quality Education",
+      description: "Focused on quality and meaningful computer education.",
+      icon: GraduationCap,
     },
     {
-      title: "Our Vision",
-      description: "To be Maharashtra's most trusted computer and typing training academy.",
-      icon: Compass,
-      gradient: "from-cyan-500 to-blue-600 shadow-cyan-500/25",
+      title: "Practical Learning",
+      description: "Hands-on learning for real-world skills.",
+      icon: Laptop,
     },
     {
-      title: "Why Choose Us?",
-      description: "Authorized MKCL center, expert mentors, and guaranteed student support.",
+      title: "Student Success",
+      description: "Helping students build confidence and career opportunities.",
       icon: Award,
-      gradient: "from-[#d92525] to-orange-500 shadow-red-500/25",
     },
   ];
 
   return (
-    <section id="about" className="scroll-reveal py-20 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/60 border-t border-b border-slate-200/80">
+    <section
+      id="about"
+      className="scroll-reveal py-16 sm:py-20 lg:py-24 bg-white border-t border-b border-slate-200/80"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Column: Heading and Description */}
-          <div className="lg:col-span-5">
-            <div className="inline-block text-xs font-bold tracking-widest text-[#0062d2] uppercase mb-1.5 bg-gradient-to-r from-blue-50 to-indigo-50 px-3 py-1 rounded-full border border-blue-100 shadow-2xs">
-              ABOUT OUR INSTITUTE
+          {/* LEFT: Complete Original Director Photograph */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-start">
+            <div className="relative w-full max-w-[380px] sm:max-w-[420px] rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/90 shadow-md">
+              <img
+                src={directorPhotoUrl}
+                alt="Mr. Ravindra Solanke (Director)"
+                className="w-full h-auto object-contain block mx-auto"
+                loading="lazy"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.src.includes("NSBEzZ-sp-Wg")) {
+                    target.src =
+                      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhG2iTTlNQSMb1rdZv6AnyeWiUz37YXkucdO9FZyhCeZyvLkLNIppqD17yq3orWiAunlY4FDwp1l80tl_V7n8ZjCUY-XepdAi1cGVCWkpN9OSjoNSBEzZ-sp-WgO71OLkfICTlTrnEwEagjvaPYkThVApQcMYpKwI-7OH2GgVUOUitE-JYvJCoUCM3Ys38/s320/Solanke%20sir.png";
+                  }
+                }}
+              />
+              
+              {/* Single Subtle Name Label */}
+              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-[#0a192f]/90 text-white px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold tracking-wide shadow-sm">
+                Mr. Ravindra Solanke (Director)
+              </div>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-              About <span className="bg-gradient-to-r from-[#0062d2] via-[#0284c7] to-[#2563eb] bg-clip-text text-transparent">Us</span>
-            </h2>
-            <p className="mt-4 text-[14.5px] sm:text-base text-slate-600 leading-relaxed font-normal">
-              Amol Infotech is a leading computer training institute offering government recognized courses like MS-CIT, Tally, DTP and more. Our mission is to provide quality computer education with practical knowledge to help students build a successful career in the digital world.
-            </p>
           </div>
 
-          {/* Right Column: 3 Feature Cards with sequential entrance & micro-hover */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-5">
-            {cards.map((card, index) => {
-              const Icon = card.icon;
-              return (
-                <div
-                  key={index}
-                  style={{ animationDelay: `${index * 140}ms` }}
-                  className="bg-gradient-to-b from-white to-slate-50/60 rounded-2xl p-6 border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-blue-300/80 transition-all duration-300 hover:-translate-y-1.5 group cursor-default"
-                >
-                  {/* Gradient icon badge: rotates 2.5 deg & scales 1.05 on card hover */}
-                  <div
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.gradient} flex items-center justify-center text-white mb-4 shadow-md transition-transform duration-300 ease-out group-hover:rotate-[2.5deg] group-hover:scale-105`}
-                  >
-                    <Icon className="w-6 h-6 stroke-[2]" />
+          {/* RIGHT: Clean, Minimal About Us Content */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            
+            {/* Eyebrow */}
+            <div className="inline-block text-xs font-bold tracking-widest text-[#0062d2] uppercase mb-2">
+              ABOUT US
+            </div>
+
+            {/* Main Heading */}
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-4">
+              About <span className="bg-gradient-to-r from-[#0062d2] via-[#0284c7] to-[#2563eb] bg-clip-text text-transparent">Us</span>
+            </h2>
+
+            {/* Concise Mission Paragraph */}
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mb-8 max-w-2xl">
+              Amol Infotech is a trusted computer training institute offering government-recognized courses and practical digital education. Our focus is to provide quality training, hands-on learning and the right guidance to help students build confidence and prepare for better career opportunities.
+            </p>
+
+            {/* Three Key Points with Minimal Formatting */}
+            <div className="space-y-4 border-t border-slate-100 pt-6">
+              {keyPoints.map((item, idx) => {
+                const IconComponent = item.icon;
+                return (
+                  <div key={idx} className="flex items-start space-x-3.5">
+                    <div className="mt-0.5 w-8 h-8 rounded-lg bg-blue-50 text-[#0062d2] flex items-center justify-center flex-shrink-0 border border-blue-100/60">
+                      <IconComponent className="w-4 h-4 stroke-[2.2]" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900 tracking-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mt-0.5">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                  
-                  <h3 className="text-base font-extrabold text-slate-900 tracking-tight mb-2 group-hover:text-blue-600 transition-colors duration-200">
-                    {card.title}
-                  </h3>
-                  
-                  <p className="text-[13px] text-slate-500 leading-relaxed font-medium">
-                    {card.description}
-                  </p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
+
           </div>
 
         </div>
-
       </div>
     </section>
   );

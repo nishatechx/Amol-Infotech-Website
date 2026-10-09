@@ -1,4 +1,5 @@
 import React from "react";
+import { CLOUDINARY_BRANDING } from "../config/images";
 
 interface AmolLogoProps {
   className?: string;
@@ -6,8 +7,7 @@ interface AmolLogoProps {
   showText?: boolean;
 }
 
-const OFFICIAL_LOGO_URL =
-  "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxi4v2VP-ux_tgpP_qrFA_iNc5QuhqK8xR-MK0_o4Qqwpy-UY5K3MFEOZcfYzQsouGUdKSn1YU5C8mRORw-xLl1asyWbi7FQSwuQGupZ_Y6S7sosNVxD7pfofLWdAjTvEB5h11fLV4wpoAqRkOaY-PB6aoxo_RvJiaSITCKRD9BtDVLQDSlFRoZE0q5og/s320/Amol%20Infotech%20Logo.png";
+const OFFICIAL_LOGO_URL = CLOUDINARY_BRANDING.instituteLogo;
 
 const LOCAL_FALLBACK_URL = "/images/logos/amol_infotech_logo.png";
 

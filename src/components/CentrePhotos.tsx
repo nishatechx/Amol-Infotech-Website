@@ -1,8 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight, X, ZoomIn, Camera } from "lucide-react";
+import React, { useState, useRef } from "react";
+import { ChevronLeft, ChevronRight, X, ZoomIn, Camera, Image as ImageIcon } from "lucide-react";
 import AmolLogo from "./AmolLogo";
+import { useCms } from "../hooks/useCms";
+import { DEFAULT_PHOTOS, DEFAULT_CATEGORIES } from "../server/defaultData";
 
 export const CentrePhotos: React.FC = () => {
+  const { content } = useCms();
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -10,53 +14,23 @@ export const CentrePhotos: React.FC = () => {
   const startXRef = useRef(0);
   const scrollLeftRef = useRef(0);
 
-  const photos = [
-    {
-      id: 1,
-      title: "MS-CIT Computer Training Lab",
-      subtitle: "High-spec workstations with modern monitors & high-speed Internet",
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
-      tag: "MS-CIT Lab",
-    },
-    {
-      id: 2,
-      title: "Interactive Practical Learning",
-      subtitle: "Students mastering typing speed drills and practical software",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-      tag: "Student Practice",
-    },
-    {
-      id: 3,
-      title: "MS-CIT Batch Training Session",
-      subtitle: "Individual PC allocated to each learner with personal attention",
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
-      tag: "Live Batch",
-    },
-    {
-      id: 4,
-      title: "Amol Infotech Reception & Helpdesk",
-      subtitle: "Welcome counter and student admission counselling desk",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
-      tag: "Reception Desk",
-    },
-    {
-      id: 5,
-      title: "MS-CIT Certificate Distribution Ceremony",
-      subtitle: "Proud students receiving their government-recognised certificates",
-      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
-      tag: "Certificates",
-    },
-  ];
+  const allPhotos = content?.photos && content.photos.length > 0 ? content.photos : DEFAULT_PHOTOS;
+  const categories = content?.categories && content.categories.length > 0 ? content.categories : DEFAULT_CATEGORIES;
+
+  const filteredPhotos =
+    selectedCategory === "all"
+      ? allPhotos
+      : allPhotos.filter((p) => p.category === selectedCategory);
 
   const handlePrev = () => {
     if (lightboxIndex !== null) {
-      setLightboxIndex((lightboxIndex - 1 + photos.length) % photos.length);
+      setLightboxIndex((lightboxIndex - 1 + filteredPhotos.length) % filteredPhotos.length);
     }
   };
 
   const handleNext = () => {
     if (lightboxIndex !== null) {
-      setLightboxIndex((lightboxIndex + 1) % photos.length);
+      setLightboxIndex((lightboxIndex + 1) % filteredPhotos.length);
     }
   };
 
@@ -90,17 +64,17 @@ export const CentrePhotos: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
           <div>
             <div className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-blue-700 uppercase mb-2 bg-gradient-to-r from-blue-50 to-indigo-50 px-3 py-1 rounded-full border border-blue-100/80 shadow-2xs">
               <Camera className="w-3.5 h-3.5 text-blue-600" />
               <span>CAMPUS & PRACTICAL LABS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-              Centre <span className="bg-gradient-to-r from-[#0062d2] via-[#0284c7] to-[#2563eb] bg-clip-text text-transparent">Photos</span>
+              Inside <span className="bg-gradient-to-r from-[#0062d2] via-[#0284c7] to-[#2563eb] bg-clip-text text-transparent">Amol Infotech</span>
             </h2>
             <p className="mt-2 text-sm sm:text-base text-slate-600 font-medium">
-              Take a look at our modern training environment and student activities.
+              Take a look at our learning environment.
             </p>
           </div>
 
@@ -127,111 +101,196 @@ export const CentrePhotos: React.FC = () => {
           </div>
         </div>
 
-        {/* 5 Photos Horizontal Row with Logo and drag-to-scroll */}
-        <div
-          ref={scrollContainerRef}
-          id="photos-scroll-container"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => {
-            if (!isDraggingRef.current) setIsPaused(false);
-          }}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onTouchStart={() => setIsPaused(true)}
-          onTouchEnd={() => setTimeout(() => setIsPaused(false), 2000)}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4.5 overflow-x-auto pb-4 scrollbar-none cursor-grab active:cursor-grabbing select-none"
-        >
-          {photos.map((photo, index) => (
-            <div
-              key={photo.id}
-              onClick={() => {
-                if (!isDraggingRef.current) setLightboxIndex(index);
-              }}
-              className="group relative h-[210px] sm:h-[220px] rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl cursor-pointer transition-all duration-300 transform hover:-translate-y-1"
-            >
-              {/* Background Photo with gentle 1.04 zoom */}
-              <img
-                src={photo.image}
-                alt={photo.title}
-                className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                draggable={false}
-              />
-
-              {/* Top-Left Institute Logo Watermark */}
-              <div className="absolute top-2.5 left-2.5 z-10 bg-white/95 backdrop-blur-md px-2 py-1 rounded-md shadow-md border border-white/80 transition-transform duration-300 group-hover:scale-105 pointer-events-none">
-                <AmolLogo size="xs" />
-              </div>
-
-              {/* Tag pill at top right (stable on hover) */}
-              <div className="absolute top-2.5 right-2.5 z-10 bg-gradient-to-r from-[#071f40]/90 to-[#0b3368]/90 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
-                {photo.tag}
-              </div>
-
-              {/* Hover Dark Radial Overlay with zoom icon */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-blue-950/45 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white z-10">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
-                  <ZoomIn className="w-5 h-5 text-white" />
-                </div>
-              </div>
-
-              {/* Title tag at bottom: text moves upward by a few pixels on hover */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent p-3 text-white z-10 transition-transform duration-300 group-hover:-translate-y-1">
-                <div className="text-xs font-bold tracking-tight truncate drop-shadow-xs">
-                  {photo.title}
-                </div>
-                <div className="text-[10px] text-slate-300 truncate">
-                  {photo.subtitle}
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Dynamic Category Filters Pill Bar */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-3 scrollbar-none">
+          <button
+            type="button"
+            onClick={() => setSelectedCategory("all")}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+              selectedCategory === "all"
+                ? "bg-[#0062d2] text-white shadow-xs"
+                : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
+            }`}
+          >
+            All Photos ({allPhotos.length})
+          </button>
+          {categories.map((cat) => {
+            const count = allPhotos.filter((p) => p.category === cat).length;
+            if (count === 0) return null; // Only show categories with available photos
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+                  selectedCategory === cat
+                    ? "bg-[#0062d2] text-white shadow-xs"
+                    : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
+                }`}
+              >
+                {cat} ({count})
+              </button>
+            );
+          })}
         </div>
+
+        {/* Photos Horizontal Row with drag-to-scroll */}
+        {filteredPhotos.length === 0 ? (
+          <div className="bg-white p-12 text-center rounded-2xl border border-slate-200">
+            <ImageIcon className="w-8 h-8 text-slate-400 mx-auto mb-2" />
+            <p className="text-sm font-semibold text-slate-700">No photos found in this category.</p>
+          </div>
+        ) : (
+          <div
+            ref={scrollContainerRef}
+            id="photos-scroll-container"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => {
+              if (!isDraggingRef.current) setIsPaused(false);
+            }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setTimeout(() => setIsPaused(false), 2000)}
+            className="flex gap-4.5 overflow-x-auto pb-4 scrollbar-none cursor-grab active:cursor-grabbing select-none"
+          >
+            {filteredPhotos.map((photo, index) => (
+              <div
+                key={photo.id}
+                onClick={() => {
+                  if (!isDraggingRef.current) setLightboxIndex(index);
+                }}
+                className="group relative flex-shrink-0 w-[260px] sm:w-[280px] lg:w-[300px] h-[210px] sm:h-[220px] rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl cursor-pointer transition-all duration-300 transform hover:-translate-y-1"
+              >
+                {/* Background Photo */}
+                <img
+                  src={photo.image}
+                  alt={photo.title}
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                  draggable={false}
+                  loading="lazy"
+                />
+
+                {/* Subtle dark gradient overlay at bottom */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/35 to-transparent pointer-events-none"
+                  aria-hidden="true"
+                />
+
+                {/* Top Logo Watermark Badge */}
+                <div className="absolute top-2.5 left-2.5 pointer-events-none">
+                  <div className="bg-white/90 backdrop-blur-md px-2 py-1 rounded-md shadow-xs border border-white/60 flex items-center space-x-1.5 transition-transform duration-300 group-hover:scale-105">
+                    <AmolLogo className="h-4 w-auto" />
+                    <span className="text-[10px] font-black tracking-tight text-blue-900">
+                      RISOD
+                    </span>
+                  </div>
+                </div>
+
+                {/* Top Right Zoom Icon Indicator */}
+                <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-slate-900/60 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                </div>
+
+                {/* Bottom Caption Overlay */}
+                <div className="absolute inset-x-0 bottom-0 p-3.5 text-white pointer-events-none">
+                  <span className="inline-block text-[9.5px] font-extrabold uppercase tracking-wider text-cyan-300 bg-blue-950/80 px-2 py-0.5 rounded border border-blue-400/30 mb-1">
+                    {photo.category}
+                  </span>
+                  <h3 className="text-xs sm:text-[13px] font-bold leading-tight drop-shadow-md line-clamp-1">
+                    {photo.title}
+                  </h3>
+                  {photo.subtitle && (
+                    <p className="text-[11px] text-slate-200/90 leading-tight mt-0.5 drop-shadow-sm line-clamp-1">
+                      {photo.subtitle}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
       </div>
 
-      {/* Lightbox Modal with Logo & entrance animation */}
-      {lightboxIndex !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-scale-in">
-          <button
-            onClick={() => setLightboxIndex(null)}
-            className="absolute top-5 right-5 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-200 cursor-pointer active:scale-90"
+      {/* Lightbox Modal */}
+      {lightboxIndex !== null && filteredPhotos[lightboxIndex] && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-scale-in"
+          onClick={() => setLightboxIndex(null)}
+        >
+          <div
+            className="relative max-w-4xl w-full bg-slate-950 rounded-2xl overflow-hidden border border-white/20 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
           >
-            <X className="w-6 h-6" />
-          </button>
-
-          <button
-            onClick={handlePrev}
-            className="absolute left-4 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-200 cursor-pointer active:scale-90"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-
-          <div className="max-w-4xl max-h-[85vh] flex flex-col items-center">
-            {/* Modal Logo watermark */}
-            <div className="mb-3 bg-white/95 px-3 py-1.5 rounded-lg shadow-lg">
-              <AmolLogo size="sm" />
+            {/* Top Bar */}
+            <div className="flex items-center justify-between p-4 bg-slate-900/90 text-white border-b border-slate-800">
+              <div className="flex items-center space-x-2">
+                <AmolLogo className="h-6 w-auto" />
+                <span className="text-xs font-bold text-slate-300">
+                  {filteredPhotos[lightboxIndex].category}
+                </span>
+              </div>
+              <button
+                onClick={() => setLightboxIndex(null)}
+                className="p-1.5 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer"
+                aria-label="Close"
+              >
+                <X className="w-6 h-6" />
+              </button>
             </div>
 
-            <img
-              src={photos[lightboxIndex].image}
-              alt={photos[lightboxIndex].title}
-              className="max-h-[65vh] w-auto rounded-xl shadow-2xl object-contain border border-white/20"
-            />
-            <div className="mt-4 text-center text-white max-w-xl">
-              <h4 className="text-lg font-bold">{photos[lightboxIndex].title}</h4>
-              <p className="text-sm text-slate-300 mt-1">{photos[lightboxIndex].subtitle}</p>
+            {/* Main Lightbox Image */}
+            <div className="relative aspect-video max-h-[70vh] flex items-center justify-center bg-black">
+              <img
+                src={filteredPhotos[lightboxIndex].image}
+                alt={filteredPhotos[lightboxIndex].title}
+                className="w-full h-full object-contain select-none"
+              />
+
+              {/* Prev/Next arrows in Lightbox */}
+              {filteredPhotos.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handlePrev();
+                    }}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-all cursor-pointer"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleNext();
+                    }}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-all cursor-pointer"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Caption */}
+            <div className="p-4 bg-slate-900 text-white">
+              <h3 className="font-bold text-base">
+                {filteredPhotos[lightboxIndex].title}
+              </h3>
+              {filteredPhotos[lightboxIndex].subtitle && (
+                <p className="text-xs text-slate-300 mt-1">
+                  {filteredPhotos[lightboxIndex].subtitle}
+                </p>
+              )}
             </div>
           </div>
-
-          <button
-            onClick={handleNext}
-            className="absolute right-4 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-200 cursor-pointer active:scale-90"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
         </div>
       )}
+
     </section>
   );
 };

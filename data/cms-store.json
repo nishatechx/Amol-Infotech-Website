@@ -1,0 +1,595 @@
+{
+  "auth": {
+    "director": {
+      "email": "22210007@mkcl.org",
+      "username": "director",
+      "passwordHash": "ebe83e852c7468e16e3e9148ba18a3e49c34fdd52e1ac8604ae95d92725b587717bef745d699e2538b9c3b1008c0b1136c87761a9eaf8444d7673b6d5baa2949",
+      "salt": "c29896d90ca353f3383cbc454cf38822",
+      "name": "Mr. Ravindra Solanke",
+      "designation": "Director",
+      "lastLogin": "2026-10-09T07:21:03.250Z"
+    },
+    "sessions": {
+      "2ff0681247deb059eb1e2ec9388432849df48b5e391cfa4bb86c09c1d8c97ede": {
+        "token": "2ff0681247deb059eb1e2ec9388432849df48b5e391cfa4bb86c09c1d8c97ede",
+        "username": "director",
+        "createdAt": "2026-10-09T07:21:03.250Z",
+        "expiresAt": "2026-10-16T07:21:03.250Z"
+      }
+    }
+  },
+  "published": {
+    "photos": [
+      {
+        "id": "photo-1",
+        "title": "MS-CIT Computer Training Lab",
+        "subtitle": "High-spec workstations with modern monitors & high-speed Internet",
+        "image": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+        "category": "Computer Lab",
+        "isCover": true,
+        "visible": true,
+        "order": 1
+      },
+      {
+        "id": "photo-2",
+        "title": "Interactive Practical Learning",
+        "subtitle": "Students mastering typing speed drills and practical software",
+        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+        "category": "Students Learning",
+        "isCover": false,
+        "visible": true,
+        "order": 2
+      },
+      {
+        "id": "photo-3",
+        "title": "MS-CIT Batch Training Session",
+        "subtitle": "Individual PC allocated to each learner with personal attention",
+        "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+        "category": "Classrooms",
+        "isCover": false,
+        "visible": true,
+        "order": 3
+      },
+      {
+        "id": "photo-4",
+        "title": "Amol Infotech Reception & Helpdesk",
+        "subtitle": "Welcome counter and student admission counselling desk",
+        "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+        "category": "Infrastructure",
+        "isCover": false,
+        "visible": true,
+        "order": 4
+      },
+      {
+        "id": "photo-5",
+        "title": "MS-CIT Certificate Distribution Ceremony",
+        "subtitle": "Proud students receiving their government-recognised certificates",
+        "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+        "category": "Institute Events",
+        "isCover": false,
+        "visible": true,
+        "order": 5
+      }
+    ],
+    "categories": [
+      "Computer Lab",
+      "Classrooms",
+      "Students Learning",
+      "Training Activities",
+      "Institute Events",
+      "Infrastructure",
+      "Other"
+    ],
+    "courses": [
+      {
+        "id": "mscit",
+        "name": "MS-CIT",
+        "subtitle": "Maharashtra State Certificate in Information Technology",
+        "duration": "3 Months",
+        "category": "certificate",
+        "badge": "MKCL Authorized",
+        "logoUrl": "https://blogger.googleusercontent.com/img/a/AVvXsEiv_hwCyTScUIhfgYuRlP2qvRPMUBbQiwvWrSXcEgxZ5uuBUkVJiaLWJjSpp4LKCD-W7rG_rQoKG_PWqXEi4bRa_JT840F267tuH8xVPqY7NQRmS-8AR9i2ltNEuK1ydFqTEuDYPijcoq6a6EBy9SdMZrVmr6cTHcTrr-V0jysNpRJXH5Xo4_uY9q691Vk",
+        "visible": true,
+        "order": 1
+      },
+      {
+        "id": "typing",
+        "name": "Computer Typing (CCTP)",
+        "subtitle": "English & Marathi Typing Speed Certification",
+        "duration": "2 Months",
+        "category": "certificate",
+        "badge": "Govt. Recognized",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSjD-OuOatjc5BqBAGi9qxjbgBjpNZNJKG-EC_CaQ1aeGX6J7LgfwTiCVIVSfXY92XcsXlAjRTO0rz33mWCDhkdJWYPWJMIYtDHI4aEpsfB0s_hfWGgjDWJStYb6wAOqD5eSb9SwZ8Rsu4jMV2LQl4iqk4ShKyQ84xDZdhnenSmWPqBoUlltXMY_juqU8/s320/Computer%20Typing.png",
+        "visible": true,
+        "order": 2
+      },
+      {
+        "id": "tally",
+        "name": "Tally Prime",
+        "subtitle": "GST, E-Way Bill, TDS & Practical Accounting",
+        "duration": "2 Months",
+        "category": "certificate",
+        "badge": "Accounting with GST",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0nU9t197ZbKOdY-aTiLqOArP8jcX3I80xH-HB6f8PWYfOTDDbZREG0pLtVj4IhHaa_HaPY3jr-I8uHYnpnSSv2rnE3AFXQhq05maWwOUrUEoTsWXOcu1C-I4Oea9jVkWO4kC8pT6z_DVjrIhyphenhyphenwfuzX_MeIJozlfByQQfC4bRS-sa9ZbdGoayDiOatTv0/s320/21d92f5f-5605-40c7-84f2-6827f923be5b.png",
+        "visible": true,
+        "order": 3
+      },
+      {
+        "id": "excel",
+        "name": "Advanced Excel",
+        "subtitle": "VLOOKUP, XLOOKUP, Pivot Tables, Macros & MIS",
+        "duration": "2 Months",
+        "category": "certificate",
+        "badge": "Corporate MIS",
+        "logoUrl": "https://blogger.googleusercontent.com/img/a/AVvXsEirgaesdVKqztAI4brjEPatifE0cwI0GB5P3yINvBLr2Z_dt6vC0oW2TKZaakEc_40AFi7YswiI-luqAg_-uahfburfIzVBePqUaVbsQ-fc8L7k1nvSmBzAe1SSBhAMw0XIL3zC1Blmepd-lNTMo9PZVZg5wd4LNTPgzMc_-tCqAmDUWoof2xIro6j7wK8=s1600",
+        "visible": true,
+        "order": 4
+      },
+      {
+        "id": "graphics",
+        "name": "Graphic Designing",
+        "subtitle": "Photoshop, CorelDRAW, Illustrator & Canva",
+        "duration": "3 to 6 Months",
+        "category": "professional",
+        "badge": "Creative Industry",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9lgPuF0JtqFKrT4rlknTx9svadl9cc9cxApyc9oTnmu3erMVYV1TmgZYOWQGgw1MKLkyqQtHSFWzEZeECSgpno2KMHzD6bvb5vcS9PpK9UrSJegJ_F_bSnIegiTMiq_pj_RSQH4qx9lKI_RjEQz3HQsET80xxXrbw4g79XwLevEKJagKJY0GI8HF3vwg/s320/Graphics%20Design.png",
+        "visible": true,
+        "order": 5
+      },
+      {
+        "id": "video",
+        "name": "Video Editing",
+        "subtitle": "Premiere Pro, After Effects, Reels & YouTube",
+        "duration": "3 Months",
+        "category": "professional",
+        "badge": "Media & Creator",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijbZSJ6k6dzjjEc9VZYn1JrWF1QZdb9klVlGP-2I9KtA9jQm3mlYIIej6zaf_S9lweIw2kGk_slogw4gxgjKgKinuWptFW60NwRzRyWcMr2j5qUTF2BR29elOqOgOsEhqLsgfRUhrISIoJI0NmE_hzTR2aFL5oVDxArgz5kHaQt3JdxfaF_3CEwcK6g5o/s320/Video%20Editing.png",
+        "visible": true,
+        "order": 6
+      },
+      {
+        "id": "analytics",
+        "name": "Data Analytics & Visualisation",
+        "subtitle": "Excel, Power BI, Tableau & Business Intelligence",
+        "duration": "3 to 6 Months",
+        "category": "professional",
+        "badge": "In-Demand Tech",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHCpEKFx-bKTb2_rp1fo7VtN7PBznq_OiUgRCcUhqiBEC-1ShvQy5AkP6qWAjs3mRWalbVFYp_4DloXC1Nm9O40xy34axEn23yVt7n85X8abc3fFwBMbP3RYpuI-eos2LJaIaaFlb0leY-PakgZVgx47T2frZPGWCBdAXfV6FHvm_nWpcQ65KLtRDmNKU/s320/Data%20Analytics.png",
+        "visible": true,
+        "order": 7
+      },
+      {
+        "id": "office",
+        "name": "Office Assistance",
+        "subtitle": "MS Office Suite, Email Drafting & Office Admin",
+        "duration": "2 Months",
+        "category": "certificate",
+        "badge": "Job Oriented",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgie7wqm31MxGPkkqdUgwnu7x2U0hg0l6vDFsugDfxIqS9B-r_C7VwfzCb82dDjPWU-0LQH_TFP8PHxVDAMn_DUFjSc_Qd2qwqeD23y6erDZ_vB1q76RuE777dyYyw-mSmdfmpX-l6Wc62Vio913e6DaWzoZpR3DGScx0ePc01Ny4MRQx8kt9cjVmeIqEI/s320/Office%20Assistance.png",
+        "visible": true,
+        "order": 8
+      },
+      {
+        "id": "softskills",
+        "name": "Soft Skills",
+        "subtitle": "Personality Development, English & Interviews",
+        "duration": "1 to 2 Months",
+        "category": "certificate",
+        "badge": "Career Confidence",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCsySIU4ik3s48ZJMUUUzms4d83lwQZGAvQZF9HY78zyKpRU_MFQwxmPILHJwF6afHM9P5b1NYY362ib1uL0yilB3kywjeVpmDaiwnRHPcwdB4E5Ta5YJlWJsBXcppJf8iLdqdYWu7lIH8i1of0HudakBmL3dK_-iI5AhK6Q8r_elvRsuvyd3-2ghZXLc/s320/Soft%20Skills.png",
+        "visible": true,
+        "order": 9
+      },
+      {
+        "id": "webdev",
+        "name": "Web Development",
+        "subtitle": "HTML5, CSS3, JavaScript, React & WordPress",
+        "duration": "4 to 6 Months",
+        "category": "professional",
+        "badge": "Full Stack Ready",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_b-Y-buBWEO688WUutkeiRKhKbrW6Ypo3XqAe5wAt8LJI8-NTamDuzEBUNblUzZQ_NC1NjV0lz7gborrEpX31g5xSghNG_YOdMjx1Gjj2G29oOtE51N5Zx5_mgYQug-PhjIRQk-RaVKcYh98nWuG9sYtpMZwEtR6TUvRx9qDHPuMerIIkw7LbRH0rFmk/s320/Web.png",
+        "visible": true,
+        "order": 10
+      },
+      {
+        "id": "cyber",
+        "name": "Cyber Security",
+        "subtitle": "Network Defense, Ethical Hacking & Data Protection",
+        "duration": "3 to 6 Months",
+        "category": "professional",
+        "badge": "Cyber Defense",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1n7Mb7Vd7ED_9ZPRRnv6ynQ9zzKwUJVG-sJ5s5V8-MURIBZ22TUBY_EXIeSmzXABs18Q0LvTC8Kz1aY4e4xCFkIXe1kvwVV_RAG9MtqiWh4FsRd-HeBzA1-c-2Fi0hOC4ZEvtBhbuXO_jUXHsUPtgKzWK-ucsbhF3McXMNTS6n2Z7d6qJnSvf3uhLfmM/s320/Cyber%20security.png",
+        "visible": true,
+        "order": 11
+      }
+    ],
+    "facilities": [
+      {
+        "id": "fac-1",
+        "title": "Modern Computer Lab",
+        "description": "High-spec workstations with latest software.",
+        "accentColor": "text-blue-600 bg-blue-50 border-blue-100",
+        "visible": true,
+        "order": 1
+      },
+      {
+        "id": "fac-2",
+        "title": "High-Speed Internet",
+        "description": "Fast dedicated broadband for smooth practice.",
+        "accentColor": "text-cyan-600 bg-cyan-50 border-cyan-100",
+        "visible": true,
+        "order": 2
+      },
+      {
+        "id": "fac-3",
+        "title": "Expert Trainers",
+        "description": "Certified faculty with deep mentoring experience.",
+        "accentColor": "text-indigo-600 bg-indigo-50 border-indigo-100",
+        "visible": true,
+        "order": 3
+      },
+      {
+        "id": "fac-4",
+        "title": "AC Classrooms",
+        "description": "Comfortable air-conditioned learning space.",
+        "accentColor": "text-sky-600 bg-sky-50 border-sky-100",
+        "visible": true,
+        "order": 4
+      },
+      {
+        "id": "fac-5",
+        "title": "Practical Learning Approach",
+        "description": "100% hands-on project and real-world work.",
+        "accentColor": "text-emerald-600 bg-emerald-50 border-emerald-100",
+        "visible": true,
+        "order": 5
+      },
+      {
+        "id": "fac-6",
+        "title": "Updated Study Material",
+        "description": "Official syllabus, notes and practice test papers.",
+        "accentColor": "text-violet-600 bg-violet-50 border-violet-100",
+        "visible": true,
+        "order": 6
+      },
+      {
+        "id": "fac-7",
+        "title": "Individual Attention",
+        "description": "Personalized mentoring tailored for every student.",
+        "accentColor": "text-blue-600 bg-blue-50 border-blue-100",
+        "visible": true,
+        "order": 7
+      },
+      {
+        "id": "fac-8",
+        "title": "Doubt Clearing Support",
+        "description": "Dedicated 1-on-1 assistance and extra lab hours.",
+        "accentColor": "text-amber-600 bg-amber-50 border-amber-100",
+        "visible": true,
+        "order": 8
+      },
+      {
+        "id": "fac-9",
+        "title": "Placement Assistance",
+        "description": "Resume guidance, interview prep and job alerts.",
+        "accentColor": "text-rose-600 bg-rose-50 border-rose-100",
+        "visible": true,
+        "order": 9
+      },
+      {
+        "id": "fac-10",
+        "title": "Safe & Secure Premises",
+        "description": "CCTV monitored campus with welcoming atmosphere.",
+        "accentColor": "text-teal-600 bg-teal-50 border-teal-100",
+        "visible": true,
+        "order": 10
+      }
+    ],
+    "contact": {
+      "instituteName": "Amol Infotech & Maharana Typing Institute, Risod",
+      "phone": "+91 94217 01759",
+      "whatsapp": "+91 94217 01759",
+      "email": "22210007@mkcl.org",
+      "address": "Near Shivaji Putala, Above Bank of Maharashtra, Risod, Dist. Washim, Maharashtra - 444506",
+      "mapsUrl": "https://www.google.com/maps/place/Amol+Infotech+%26+Maharana+Typing+Institute+Risod/@19.9756123,76.7922982,17z/",
+      "openingHours": "Mon - Sat: 08:00 AM - 08:00 PM | Sun: 09:00 AM - 01:00 PM"
+    },
+    "settings": {
+      "siteTitle": "Amol Infotech & Maharana Typing Institute, Risod",
+      "metaDescription": "Government recognized computer training centre offering MS-CIT, Typing, Tally, and advanced digital skills in Risod.",
+      "logoText": "AMOL INFOTECH",
+      "facebookUrl": "https://facebook.com",
+      "instagramUrl": "https://instagram.com",
+      "youtubeUrl": "https://youtube.com",
+      "googleMapsListingUrl": "https://www.google.com/maps/place/Amol+Infotech+%26+Maharana+Typing+Institute+Risod/"
+    },
+    "lastUpdated": "2026-10-09T07:20:48.838Z"
+  },
+  "draft": {
+    "photos": [
+      {
+        "id": "photo-1",
+        "title": "MS-CIT Computer Training Lab",
+        "subtitle": "High-spec workstations with modern monitors & high-speed Internet",
+        "image": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+        "category": "Computer Lab",
+        "isCover": true,
+        "visible": true,
+        "order": 1
+      },
+      {
+        "id": "photo-2",
+        "title": "Interactive Practical Learning",
+        "subtitle": "Students mastering typing speed drills and practical software",
+        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+        "category": "Students Learning",
+        "isCover": false,
+        "visible": true,
+        "order": 2
+      },
+      {
+        "id": "photo-3",
+        "title": "MS-CIT Batch Training Session",
+        "subtitle": "Individual PC allocated to each learner with personal attention",
+        "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+        "category": "Classrooms",
+        "isCover": false,
+        "visible": true,
+        "order": 3
+      },
+      {
+        "id": "photo-4",
+        "title": "Amol Infotech Reception & Helpdesk",
+        "subtitle": "Welcome counter and student admission counselling desk",
+        "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+        "category": "Infrastructure",
+        "isCover": false,
+        "visible": true,
+        "order": 4
+      },
+      {
+        "id": "photo-5",
+        "title": "MS-CIT Certificate Distribution Ceremony",
+        "subtitle": "Proud students receiving their government-recognised certificates",
+        "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+        "category": "Institute Events",
+        "isCover": false,
+        "visible": true,
+        "order": 5
+      }
+    ],
+    "categories": [
+      "Computer Lab",
+      "Classrooms",
+      "Students Learning",
+      "Training Activities",
+      "Institute Events",
+      "Infrastructure",
+      "Other"
+    ],
+    "courses": [
+      {
+        "id": "mscit",
+        "name": "MS-CIT",
+        "subtitle": "Maharashtra State Certificate in Information Technology",
+        "duration": "3 Months",
+        "category": "certificate",
+        "badge": "MKCL Authorized",
+        "logoUrl": "https://blogger.googleusercontent.com/img/a/AVvXsEiv_hwCyTScUIhfgYuRlP2qvRPMUBbQiwvWrSXcEgxZ5uuBUkVJiaLWJjSpp4LKCD-W7rG_rQoKG_PWqXEi4bRa_JT840F267tuH8xVPqY7NQRmS-8AR9i2ltNEuK1ydFqTEuDYPijcoq6a6EBy9SdMZrVmr6cTHcTrr-V0jysNpRJXH5Xo4_uY9q691Vk",
+        "visible": true,
+        "order": 1
+      },
+      {
+        "id": "typing",
+        "name": "Computer Typing (CCTP)",
+        "subtitle": "English & Marathi Typing Speed Certification",
+        "duration": "2 Months",
+        "category": "certificate",
+        "badge": "Govt. Recognized",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSjD-OuOatjc5BqBAGi9qxjbgBjpNZNJKG-EC_CaQ1aeGX6J7LgfwTiCVIVSfXY92XcsXlAjRTO0rz33mWCDhkdJWYPWJMIYtDHI4aEpsfB0s_hfWGgjDWJStYb6wAOqD5eSb9SwZ8Rsu4jMV2LQl4iqk4ShKyQ84xDZdhnenSmWPqBoUlltXMY_juqU8/s320/Computer%20Typing.png",
+        "visible": true,
+        "order": 2
+      },
+      {
+        "id": "tally",
+        "name": "Tally Prime",
+        "subtitle": "GST, E-Way Bill, TDS & Practical Accounting",
+        "duration": "2 Months",
+        "category": "certificate",
+        "badge": "Accounting with GST",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0nU9t197ZbKOdY-aTiLqOArP8jcX3I80xH-HB6f8PWYfOTDDbZREG0pLtVj4IhHaa_HaPY3jr-I8uHYnpnSSv2rnE3AFXQhq05maWwOUrUEoTsWXOcu1C-I4Oea9jVkWO4kC8pT6z_DVjrIhyphenhyphenwfuzX_MeIJozlfByQQfC4bRS-sa9ZbdGoayDiOatTv0/s320/21d92f5f-5605-40c7-84f2-6827f923be5b.png",
+        "visible": true,
+        "order": 3
+      },
+      {
+        "id": "excel",
+        "name": "Advanced Excel",
+        "subtitle": "VLOOKUP, XLOOKUP, Pivot Tables, Macros & MIS",
+        "duration": "2 Months",
+        "category": "certificate",
+        "badge": "Corporate MIS",
+        "logoUrl": "https://blogger.googleusercontent.com/img/a/AVvXsEirgaesdVKqztAI4brjEPatifE0cwI0GB5P3yINvBLr2Z_dt6vC0oW2TKZaakEc_40AFi7YswiI-luqAg_-uahfburfIzVBePqUaVbsQ-fc8L7k1nvSmBzAe1SSBhAMw0XIL3zC1Blmepd-lNTMo9PZVZg5wd4LNTPgzMc_-tCqAmDUWoof2xIro6j7wK8=s1600",
+        "visible": true,
+        "order": 4
+      },
+      {
+        "id": "graphics",
+        "name": "Graphic Designing",
+        "subtitle": "Photoshop, CorelDRAW, Illustrator & Canva",
+        "duration": "3 to 6 Months",
+        "category": "professional",
+        "badge": "Creative Industry",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9lgPuF0JtqFKrT4rlknTx9svadl9cc9cxApyc9oTnmu3erMVYV1TmgZYOWQGgw1MKLkyqQtHSFWzEZeECSgpno2KMHzD6bvb5vcS9PpK9UrSJegJ_F_bSnIegiTMiq_pj_RSQH4qx9lKI_RjEQz3HQsET80xxXrbw4g79XwLevEKJagKJY0GI8HF3vwg/s320/Graphics%20Design.png",
+        "visible": true,
+        "order": 5
+      },
+      {
+        "id": "video",
+        "name": "Video Editing",
+        "subtitle": "Premiere Pro, After Effects, Reels & YouTube",
+        "duration": "3 Months",
+        "category": "professional",
+        "badge": "Media & Creator",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijbZSJ6k6dzjjEc9VZYn1JrWF1QZdb9klVlGP-2I9KtA9jQm3mlYIIej6zaf_S9lweIw2kGk_slogw4gxgjKgKinuWptFW60NwRzRyWcMr2j5qUTF2BR29elOqOgOsEhqLsgfRUhrISIoJI0NmE_hzTR2aFL5oVDxArgz5kHaQt3JdxfaF_3CEwcK6g5o/s320/Video%20Editing.png",
+        "visible": true,
+        "order": 6
+      },
+      {
+        "id": "analytics",
+        "name": "Data Analytics & Visualisation",
+        "subtitle": "Excel, Power BI, Tableau & Business Intelligence",
+        "duration": "3 to 6 Months",
+        "category": "professional",
+        "badge": "In-Demand Tech",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHCpEKFx-bKTb2_rp1fo7VtN7PBznq_OiUgRCcUhqiBEC-1ShvQy5AkP6qWAjs3mRWalbVFYp_4DloXC1Nm9O40xy34axEn23yVt7n85X8abc3fFwBMbP3RYpuI-eos2LJaIaaFlb0leY-PakgZVgx47T2frZPGWCBdAXfV6FHvm_nWpcQ65KLtRDmNKU/s320/Data%20Analytics.png",
+        "visible": true,
+        "order": 7
+      },
+      {
+        "id": "office",
+        "name": "Office Assistance",
+        "subtitle": "MS Office Suite, Email Drafting & Office Admin",
+        "duration": "2 Months",
+        "category": "certificate",
+        "badge": "Job Oriented",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgie7wqm31MxGPkkqdUgwnu7x2U0hg0l6vDFsugDfxIqS9B-r_C7VwfzCb82dDjPWU-0LQH_TFP8PHxVDAMn_DUFjSc_Qd2qwqeD23y6erDZ_vB1q76RuE777dyYyw-mSmdfmpX-l6Wc62Vio913e6DaWzoZpR3DGScx0ePc01Ny4MRQx8kt9cjVmeIqEI/s320/Office%20Assistance.png",
+        "visible": true,
+        "order": 8
+      },
+      {
+        "id": "softskills",
+        "name": "Soft Skills",
+        "subtitle": "Personality Development, English & Interviews",
+        "duration": "1 to 2 Months",
+        "category": "certificate",
+        "badge": "Career Confidence",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCsySIU4ik3s48ZJMUUUzms4d83lwQZGAvQZF9HY78zyKpRU_MFQwxmPILHJwF6afHM9P5b1NYY362ib1uL0yilB3kywjeVpmDaiwnRHPcwdB4E5Ta5YJlWJsBXcppJf8iLdqdYWu7lIH8i1of0HudakBmL3dK_-iI5AhK6Q8r_elvRsuvyd3-2ghZXLc/s320/Soft%20Skills.png",
+        "visible": true,
+        "order": 9
+      },
+      {
+        "id": "webdev",
+        "name": "Web Development",
+        "subtitle": "HTML5, CSS3, JavaScript, React & WordPress",
+        "duration": "4 to 6 Months",
+        "category": "professional",
+        "badge": "Full Stack Ready",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_b-Y-buBWEO688WUutkeiRKhKbrW6Ypo3XqAe5wAt8LJI8-NTamDuzEBUNblUzZQ_NC1NjV0lz7gborrEpX31g5xSghNG_YOdMjx1Gjj2G29oOtE51N5Zx5_mgYQug-PhjIRQk-RaVKcYh98nWuG9sYtpMZwEtR6TUvRx9qDHPuMerIIkw7LbRH0rFmk/s320/Web.png",
+        "visible": true,
+        "order": 10
+      },
+      {
+        "id": "cyber",
+        "name": "Cyber Security",
+        "subtitle": "Network Defense, Ethical Hacking & Data Protection",
+        "duration": "3 to 6 Months",
+        "category": "professional",
+        "badge": "Cyber Defense",
+        "logoUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1n7Mb7Vd7ED_9ZPRRnv6ynQ9zzKwUJVG-sJ5s5V8-MURIBZ22TUBY_EXIeSmzXABs18Q0LvTC8Kz1aY4e4xCFkIXe1kvwVV_RAG9MtqiWh4FsRd-HeBzA1-c-2Fi0hOC4ZEvtBhbuXO_jUXHsUPtgKzWK-ucsbhF3McXMNTS6n2Z7d6qJnSvf3uhLfmM/s320/Cyber%20security.png",
+        "visible": true,
+        "order": 11
+      }
+    ],
+    "facilities": [
+      {
+        "id": "fac-1",
+        "title": "Modern Computer Lab",
+        "description": "High-spec workstations with latest software.",
+        "accentColor": "text-blue-600 bg-blue-50 border-blue-100",
+        "visible": true,
+        "order": 1
+      },
+      {
+        "id": "fac-2",
+        "title": "High-Speed Internet",
+        "description": "Fast dedicated broadband for smooth practice.",
+        "accentColor": "text-cyan-600 bg-cyan-50 border-cyan-100",
+        "visible": true,
+        "order": 2
+      },
+      {
+        "id": "fac-3",
+        "title": "Expert Trainers",
+        "description": "Certified faculty with deep mentoring experience.",
+        "accentColor": "text-indigo-600 bg-indigo-50 border-indigo-100",
+        "visible": true,
+        "order": 3
+      },
+      {
+        "id": "fac-4",
+        "title": "AC Classrooms",
+        "description": "Comfortable air-conditioned learning space.",
+        "accentColor": "text-sky-600 bg-sky-50 border-sky-100",
+        "visible": true,
+        "order": 4
+      },
+      {
+        "id": "fac-5",
+        "title": "Practical Learning Approach",
+        "description": "100% hands-on project and real-world work.",
+        "accentColor": "text-emerald-600 bg-emerald-50 border-emerald-100",
+        "visible": true,
+        "order": 5
+      },
+      {
+        "id": "fac-6",
+        "title": "Updated Study Material",
+        "description": "Official syllabus, notes and practice test papers.",
+        "accentColor": "text-violet-600 bg-violet-50 border-violet-100",
+        "visible": true,
+        "order": 6
+      },
+      {
+        "id": "fac-7",
+        "title": "Individual Attention",
+        "description": "Personalized mentoring tailored for every student.",
+        "accentColor": "text-blue-600 bg-blue-50 border-blue-100",
+        "visible": true,
+        "order": 7
+      },
+      {
+        "id": "fac-8",
+        "title": "Doubt Clearing Support",
+        "description": "Dedicated 1-on-1 assistance and extra lab hours.",
+        "accentColor": "text-amber-600 bg-amber-50 border-amber-100",
+        "visible": true,
+        "order": 8
+      },
+      {
+        "id": "fac-9",
+        "title": "Placement Assistance",
+        "description": "Resume guidance, interview prep and job alerts.",
+        "accentColor": "text-rose-600 bg-rose-50 border-rose-100",
+        "visible": true,
+        "order": 9
+      },
+      {
+        "id": "fac-10",
+        "title": "Safe & Secure Premises",
+        "description": "CCTV monitored campus with welcoming atmosphere.",
+        "accentColor": "text-teal-600 bg-teal-50 border-teal-100",
+        "visible": true,
+        "order": 10
+      }
+    ],
+    "contact": {
+      "instituteName": "Amol Infotech & Maharana Typing Institute, Risod",
+      "phone": "+91 94217 01759",
+      "whatsapp": "+91 94217 01759",
+      "email": "22210007@mkcl.org",
+      "address": "Near Shivaji Putala, Above Bank of Maharashtra, Risod, Dist. Washim, Maharashtra - 444506",
+      "mapsUrl": "https://www.google.com/maps/place/Amol+Infotech+%26+Maharana+Typing+Institute+Risod/@19.9756123,76.7922982,17z/",
+      "openingHours": "Mon - Sat: 08:00 AM - 08:00 PM | Sun: 09:00 AM - 01:00 PM"
+    },
+    "settings": {
+      "siteTitle": "Amol Infotech & Maharana Typing Institute, Risod",
+      "metaDescription": "Government recognized computer training centre offering MS-CIT, Typing, Tally, and advanced digital skills in Risod.",
+      "logoText": "AMOL INFOTECH",
+      "facebookUrl": "https://facebook.com",
+      "instagramUrl": "https://instagram.com",
+      "youtubeUrl": "https://youtube.com",
+      "googleMapsListingUrl": "https://www.google.com/maps/place/Amol+Infotech+%26+Maharana+Typing+Institute+Risod/"
+    },
+    "lastUpdated": "2026-10-09T07:20:48.838Z"
+  }
+}

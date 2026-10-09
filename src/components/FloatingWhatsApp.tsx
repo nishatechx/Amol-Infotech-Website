@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import { useCms } from "../hooks/useCms";
+import { DEFAULT_CONTACT } from "../server/defaultData";
 
 export const FloatingWhatsApp: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const { content } = useCms();
+  const contact = content?.contact || DEFAULT_CONTACT;
 
-  const phoneNumber = "919421701759";
+  const rawPhone = (contact.whatsapp || "919421701759").replace(/\D/g, "");
+  const phoneNumber = rawPhone.length === 10 ? `91${rawPhone}` : rawPhone;
   const defaultMessage = encodeURIComponent(
     "Hello Amol Infotech & Maharana Typing Institute, I would like to inquire about admissions and course details."
   );
